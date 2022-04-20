@@ -1,0 +1,2566 @@
+{
+	"info": {
+		"_postman_id": "93f43529-3052-457f-8d45-082696c623d5",
+		"name": "Pama MR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Configuration",
+			"item": [
+				{
+					"name": "User Access",
+					"item": [
+						{
+							"name": "Get User Access List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/useraccess",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"useraccess"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User Access List Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/useraccess",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"useraccess"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get data\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 2,\n            \"page_number\": 1,\n            \"page_size\": 3,\n            \"total_pages\": 1\n        },\n        \"links\": [\n            {\n                \"href\": \"https://localhost:5001/api/v1/useraccess?page_number=1&page_size=3\",\n                \"rel\": \"self\",\n                \"method\": \"GET\"\n            }\n        ],\n        \"items\": [\n            {\n                \"id\": \"e2941689-600a-4263-bf90-578004e97f3e\",\n                \"employee_id\": \"00000000-0000-0000-0000-000000000000\",\n                \"name\": null,\n                \"can_access_feature\": true,\n                \"can_manage_period\": true,\n                \"can_modify_update\": false,\n                \"can_modify_delete\": false,\n                \"can_review_data\": true,\n                \"can_validate_matrix\": false,\n                \"can_version_master\": true,\n                \"can_access_activity_log\": true,\n                \"can_restore_data\": false\n            },\n            {\n                \"id\": \"139cc4ec-5bb8-4347-804c-b3626637b886\",\n                \"employee_id\": \"00000000-0000-0000-0000-000000000000\",\n                \"name\": null,\n                \"can_access_feature\": true,\n                \"can_manage_period\": true,\n                \"can_modify_update\": false,\n                \"can_modify_delete\": false,\n                \"can_review_data\": true,\n                \"can_validate_matrix\": false,\n                \"can_version_master\": true,\n                \"can_access_activity_log\": true,\n                \"can_restore_data\": false\n            }\n        ]\n    },\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Get User Access Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/useraccess/{{user_access_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"useraccess",
+										"{{user_access_id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User Access Details Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/useraccess/{{user_access_id}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"useraccess",
+												"{{user_access_id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"message\": \"Succesfully get user access details\",\n    \"data\": {\n        \"id\": {{user_access_id}},\n        \"employee_id\": \"0000186064\",\n        \"name\": \"George S B\",\n        \"can_access_feature\": true,\n        \"can_manage_period\": true,\n        \"can_modify_upload_update\": true,\n        \"can_modify_delete\": true,\n        \"can_review_data\": true,\n        \"can_validate_matrix\": true,\n        \"can_version_master\": true,\n        \"can_access_activity_log\": true,\n        \"can_restore_data\": true\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create User Access",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"1e06d543-ee70-489e-9d78-7e7c5238c298\",\n    \"can_access_feature\": true,\n    \"can_manage_period\": true,\n    \"can_modify_upload_update\": true,\n    \"can_modify_delete\": true,\n    \"can_review_data\": true,\n    \"can_validate_matrix\": true,\n    \"can_version_master\": true,\n    \"can_access_activity_log\": true,\n    \"can_restore_data\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/useraccess/{{user_access_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"useraccess",
+										"{{user_access_id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create User Access Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/useraccess/{{user_access_id}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"useraccess",
+												"{{user_access_id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"message\": \"Succesfully create user access\",\n    \"data\": {\n        \"id\": {{user_access_id}},\n        \"user_id\": \"1e06d543-ee70-489e-9d78-7e7c5238c298\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update User Access",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"1e06d543-ee70-489e-9d78-7e7c5238c298\",\n    \"can_access_feature\": true,\n    \"can_manage_period\": true,\n    \"can_modify_upload_update\": false,\n    \"can_modify_delete\": false,\n    \"can_review_data\": true,\n    \"can_validate_matrix\": false,\n    \"can_version_master\": true,\n    \"can_access_activity_log\": true,\n    \"can_restore_data\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/useraccess/{{user_access_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"useraccess",
+										"{{user_access_id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update User Access Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/useraccess/{{user_access_id}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"useraccess",
+												"{{user_access_id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"message\": \"Succesfully update user access\",\n    \"data\": {\n        \"id\": {{user_access_id}},\n        \"user_id\": \"1e06d543-ee70-489e-9d78-7e7c5238c298\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete User Access",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/useraccess/{{user_access_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"useraccess",
+										"{{user_access_id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update User Access Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/useraccess/{{user_access_id}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"useraccess",
+												"{{user_access_id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"message\": \"Succesfully delete user access\",\n    \"data\": {\n        \"id\": {{user_access_id}},\n        \"user_id\": \"1e06d543-ee70-489e-9d78-7e7c5238c298\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Download",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/v1/useraccess/download",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"useraccess",
+										"download"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Period",
+					"item": [
+						{
+							"name": "Actual",
+							"item": [
+								{
+									"name": "Get Actual Period List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/v1/periodactual?year=2025",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodactual"
+											],
+											"query": [
+												{
+													"key": "page_number",
+													"value": "1",
+													"description": "0 => untuk menampilkan semua data",
+													"disabled": true
+												},
+												{
+													"key": "page_size",
+													"value": "3",
+													"description": "default 10",
+													"disabled": true
+												},
+												{
+													"key": "search",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "order",
+													"value": "id",
+													"disabled": true
+												},
+												{
+													"key": "order_by",
+													"value": "asc",
+													"description": "asc / desc",
+													"disabled": true
+												},
+												{
+													"key": "period",
+													"value": "01",
+													"description": "01-12 atau 12A",
+													"disabled": true
+												},
+												{
+													"key": "year",
+													"value": "2025",
+													"description": "4 digit tahun"
+												},
+												{
+													"key": "status",
+													"value": "open",
+													"description": "OPEN / CLOSE",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get Actual Period List Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{token}}",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "{{url}}/api/v1/periodactual?page_number=1&page_size=3",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodactual"
+													],
+													"query": [
+														{
+															"key": "page_number",
+															"value": "1",
+															"description": "0 => untuk menampilkan semua data"
+														},
+														{
+															"key": "page_size",
+															"value": "3",
+															"description": "default 10"
+														},
+														{
+															"key": "search",
+															"value": null,
+															"disabled": true
+														},
+														{
+															"key": "order",
+															"value": "id",
+															"disabled": true
+														},
+														{
+															"key": "order_by",
+															"value": "desc",
+															"description": "asc / desc",
+															"disabled": true
+														},
+														{
+															"key": "period",
+															"value": "01",
+															"description": "01-12 atau 12A",
+															"disabled": true
+														},
+														{
+															"key": "year",
+															"value": "2021",
+															"description": "4 digit tahun",
+															"disabled": true
+														},
+														{
+															"key": "status",
+															"value": "open",
+															"description": "OPEN / CLOSE",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 29 Oct 2021 12:05:04 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "Content-Length",
+													"value": "465"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get data\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 2,\n            \"page_number\": 1,\n            \"page_size\": 3,\n            \"total_pages\": 1\n        },\n        \"links\": [\n            {\n                \"href\": \"https://localhost:5001/api/v1/periodactual?page_number=1&page_size=3\",\n                \"rel\": \"self\",\n                \"method\": \"GET\"\n            }\n        ],\n        \"items\": [\n            {\n                \"id\": \"7fcdcfc4-c44d-4bd7-91da-0300771e4edb\",\n                \"year\": 2020,\n                \"period\": \"12A\",\n                \"status\": \"CLOSE\"\n            },\n            {\n                \"id\": \"7522f18b-e57d-4d29-a06a-cdaead1cd3f6\",\n                \"year\": 2021,\n                \"period\": \"08\",\n                \"status\": \"OPEN\"\n            }\n        ]\n    },\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Actual Period",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"period\": \"12A\",\n    \"year\": 2025,\n    \"status\": \"OPEN\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/periodactual",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodactual"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create Actual Period Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{token}}",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"period\": \"12A\",\n    \"year\": 2020,\n    \"status\": \"OPEN\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/periodactual",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodactual"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 29 Oct 2021 12:00:25 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "Content-Length",
+													"value": "175"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success store data\",\n    \"data\": {\n        \"id\": \"7fcdcfc4-c44d-4bd7-91da-0300771e4edb\",\n        \"year\": 2020,\n        \"period\": \"12A\",\n        \"status\": \"OPEN\"\n    },\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Update Actual Period",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"period\": \"12A\",\n    \"year\": 2025,\n    \"status\": \"CLOSE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/periodactual/{{actual_period_id}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodactual",
+												"{{actual_period_id}}"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update Actual Period Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{token}}",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"period\": \"12A\",\n    \"year\": 2020,\n    \"status\": \"CLOSE\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/periodactual/{{actual_period_id}}",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodactual",
+														"{{actual_period_id}}"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 29 Oct 2021 12:01:10 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "Content-Length",
+													"value": "177"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success update data\",\n    \"data\": {\n        \"id\": \"7fcdcfc4-c44d-4bd7-91da-0300771e4edb\",\n        \"year\": 2020,\n        \"period\": \"12A\",\n        \"status\": \"CLOSE\"\n    },\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Detail Actual Period",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/v1/periodactual/{{actual_period_id}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodactual",
+												"{{actual_period_id}}"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Detail Actual Period Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+														"key": "Authorization",
+														"value": "Bearer {{token}}",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "{{url}}/api/v1/periodactual/{{actual_period_id}}",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodactual",
+														"{{actual_period_id}}"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Wed, 19 Jan 2022 07:36:11 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "Content-Length",
+													"value": "180"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get detail data\",\n    \"data\": {\n        \"id\": \"7fcdcfc4-c44d-4bd7-91da-0300771e4edb\",\n        \"year\": 2020,\n        \"period\": \"12A\",\n        \"status\": \"OPEN\"\n    },\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete Actual Period",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_dev}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"period_actual_id\": [\n        \"7ae7e8e2-e37b-4136-b9ef-4e91166b4738\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/periodactual",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodactual"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Delete Actual Period",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{token_dev}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"period_actual_id\": [\n        \"9192ad79-3b86-4d80-97ae-0db67c99b333\"\n    ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/periodactual",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodactual"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"description": "",
+													"type": "text"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"message\": \"success delete data\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Plan",
+							"item": [
+								{
+									"name": "Get Plan Period List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/v1/periodplan",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodplan"
+											],
+											"query": [
+												{
+													"key": "page_number",
+													"value": "1",
+													"description": "0 => untuk menampilkan semua data",
+													"disabled": true
+												},
+												{
+													"key": "page_size",
+													"value": "3",
+													"description": "default 10",
+													"disabled": true
+												},
+												{
+													"key": "search",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "order",
+													"value": "id",
+													"disabled": true
+												},
+												{
+													"key": "order_by",
+													"value": "desc",
+													"description": "asc / desc",
+													"disabled": true
+												},
+												{
+													"key": "type",
+													"value": "internal",
+													"description": "internal/external. Jika budget_period diisi, type diabaikan",
+													"disabled": true
+												},
+												{
+													"key": "budget_period",
+													"value": "MB",
+													"description": "MB, OLQ1, OLQ2, OLQ3, S1, S2",
+													"disabled": true
+												},
+												{
+													"key": "year",
+													"value": "2021",
+													"description": "4 digit tahun",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "open",
+													"description": "open/closed",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get Plan Period List Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{token}}",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "{{url}}/api/v1/periodplan",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodplan"
+													],
+													"query": [
+														{
+															"key": "page_number",
+															"value": "1",
+															"description": "0 => untuk menampilkan semua data",
+															"disabled": true
+														},
+														{
+															"key": "page_size",
+															"value": "3",
+															"description": "default 10",
+															"disabled": true
+														},
+														{
+															"key": "search",
+															"value": null,
+															"disabled": true
+														},
+														{
+															"key": "order",
+															"value": "id",
+															"disabled": true
+														},
+														{
+															"key": "order_by",
+															"value": "desc",
+															"description": "asc / desc",
+															"disabled": true
+														},
+														{
+															"key": "type",
+															"value": "internal",
+															"description": "internal/external. Jika budget_period diisi, type diabaikan",
+															"disabled": true
+														},
+														{
+															"key": "budget_period",
+															"value": "MB",
+															"description": "MB, OLQ1, OLQ2, OLQ3, S1, S2",
+															"disabled": true
+														},
+														{
+															"key": "year",
+															"value": "2021",
+															"description": "4 digit tahun",
+															"disabled": true
+														},
+														{
+															"key": "status",
+															"value": "open",
+															"description": "open/closed",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 29 Oct 2021 15:09:52 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "Content-Length",
+													"value": "378"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get data\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 1,\n            \"page_number\": 1,\n            \"page_size\": 10,\n            \"total_pages\": 1\n        },\n        \"links\": [\n            {\n                \"href\": \"https://localhost:5001/api/v1/periodplan?page_number=1&page_size=10\",\n                \"rel\": \"self\",\n                \"method\": \"GET\"\n            }\n        ],\n        \"items\": [\n            {\n                \"id\": \"05b005b5-2834-4dce-8ddf-a16a596e9e21\",\n                \"period\": \"satu\",\n                \"year\": 2021,\n                \"status\": \"CLOSE\"\n            }\n        ]\n    },\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Plan Period",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"period_master_id\": \"9E624F3A-139A-47FE-82C9-7AF217633981\",\n    \"year\": 2021,\n    \"status\": \"OPEN\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/periodplan",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodplan"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create Plan Period Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{token}}",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"period_master_id\": \"9E624F3A-139A-47FE-82C9-7AF217633981\",\n    \"year\": 2021,\n    \"status\": \"OPEN\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/periodplan",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodplan"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 29 Oct 2021 13:18:48 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "Content-Length",
+													"value": "254"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success store data\",\n    \"data\": {\n        \"id\": \"05b005b5-2834-4dce-8ddf-a16a596e9e21\",\n        \"year\": 2021,\n        \"status\": \"OPEN\",\n        \"period_master\": {\n            \"id\": \"9e624f3a-139a-47fe-82c9-7af217633981\",\n            \"name\": \"satu\",\n            \"type\": \"INTERNAL\"\n        }\n    },\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Update Plan Period",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"period_master_id\": \"9e624f3a-139a-47fe-82c9-7af217633981\",\n    \"year\": 2021,\n    \"status\": \"CLOSE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/periodplan/{{plan_period_id}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodplan",
+												"{{plan_period_id}}"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update Plan Period Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{token}}",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"period_master_id\": \"9e624f3a-139a-47fe-82c9-7af217633981\",\n    \"year\": 2021,\n    \"status\": \"CLOSE\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/periodplan/{{plan_period_id}}",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodplan",
+														"{{plan_period_id}}"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 29 Oct 2021 13:25:47 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "Content-Length",
+													"value": "256"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success update data\",\n    \"data\": {\n        \"id\": \"05b005b5-2834-4dce-8ddf-a16a596e9e21\",\n        \"year\": 2021,\n        \"status\": \"CLOSE\",\n        \"period_master\": {\n            \"id\": \"9e624f3a-139a-47fe-82c9-7af217633981\",\n            \"name\": \"satu\",\n            \"type\": \"INTERNAL\"\n        }\n    },\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Detail Plan Period",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/v1/periodplan/{{plan_period_id}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodplan",
+												"{{plan_period_id}}"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Detail Plan Period Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+														"key": "Authorization",
+														"value": "Bearer {{token}}",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "{{url}}/api/v1/periodplan/{{plan_period_id}}",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodplan",
+														"{{plan_period_id}}"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Wed, 19 Jan 2022 08:56:21 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "Content-Length",
+													"value": "259"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get detail data\",\n    \"data\": {\n        \"id\": \"05b005b5-2834-4dce-8ddf-a16a596e9e21\",\n        \"year\": 2021,\n        \"status\": \"OPEN\",\n        \"period_master\": {\n            \"id\": \"9e624f3a-139a-47fe-82c9-7af217633981\",\n            \"name\": \"satu\",\n            \"type\": \"INTERNAL\"\n        }\n    },\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete Actual Plan",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_dev}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"period_plan_id\": [\n        \"9192ad79-3b86-4d80-97ae-0db67c99b333\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/periodplan",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodplan"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Delete Actual Period",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{token_dev}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"period_plan_id\": [\n        \"9192ad79-3b86-4d80-97ae-0db67c99b333\"\n    ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/periodplan",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"periodplan"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"description": "",
+													"type": "text"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status_code\": 200,\n    \"message\": \"success delete data\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get Period Master List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/v1/periodmaster?page_number=1&page_size=3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"periodmaster"
+									],
+									"query": [
+										{
+											"key": "page_number",
+											"value": "1",
+											"description": "0 => untuk menampilkan semua data"
+										},
+										{
+											"key": "page_size",
+											"value": "3",
+											"description": "default 10"
+										},
+										{
+											"key": "search",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "order_by",
+											"value": "desc",
+											"description": "asc / desc",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "external",
+											"description": "INTERNAL / EXTERNAL",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Period Master List Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/v1/periodmaster?page_number=1&page_size=3",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"periodmaster"
+											],
+											"query": [
+												{
+													"key": "page_number",
+													"value": "1",
+													"description": "0 => untuk menampilkan semua data"
+												},
+												{
+													"key": "page_size",
+													"value": "3"
+												},
+												{
+													"key": "search",
+													"value": null,
+													"disabled": true
+												},
+												{
+													"key": "order",
+													"value": "id",
+													"disabled": true
+												},
+												{
+													"key": "order_by",
+													"value": "desc",
+													"description": "asc / desc",
+													"disabled": true
+												},
+												{
+													"key": "type",
+													"value": "external",
+													"description": "INTERNAL / EXTERNAL",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 29 Oct 2021 11:59:17 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Content-Length",
+											"value": "634"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get data\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 5,\n            \"page_number\": 1,\n            \"page_size\": 3,\n            \"total_pages\": 2\n        },\n        \"links\": [\n            {\n                \"href\": \"https://localhost:5001/api/v1/periodmaster?page_number=1&page_size=3\",\n                \"rel\": \"self\",\n                \"method\": \"GET\"\n            },\n            {\n                \"href\": \"https://localhost:5001/api/v1/periodmaster?page_number=2&page_size=3\",\n                \"rel\": \"nextPage\",\n                \"method\": \"GET\"\n            }\n        ],\n        \"items\": [\n            {\n                \"id\": \"a04dd235-f673-4609-9d1f-208dd50d3d1e\",\n                \"name\": \"tiga\",\n                \"type\": \"INTERNAL\"\n            },\n            {\n                \"id\": \"1e7b59e6-ad7b-44b3-8770-40a3c2cf4eb2\",\n                \"name\": \"empat\",\n                \"type\": \"EXTERNAL\"\n            },\n            {\n                \"id\": \"1a06bda4-d67a-4699-9345-4c4b59016cb5\",\n                \"name\": \"lima\",\n                \"type\": \"INTERNAL\"\n            }\n        ]\n    },\n    \"errors\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Matrix",
+					"item": [
+						{
+							"name": "Get Matrices List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/matrix?keyword=T_A",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matrix"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "keyword",
+											"value": "T_A",
+											"description": "filter by keyword"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Matrices List",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/matrix?keyword=T_A",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"matrix"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "limit",
+													"value": "10",
+													"disabled": true
+												},
+												{
+													"key": "keyword",
+													"value": "T_A",
+													"description": "filter by keyword"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully get matrices list\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 5,\n            \"page_number\": 1,\n            \"page_size\": 10,\n            \"total_pages\": 1\n        },\n        \"items\": [\n            {\n                \"id\": \"dfea62d4-2a86-11ec-8d3d-0242ac130003\",\n                \"data\": \"TBL_T_A_ASSET_ADDITION\"   \n            },\n            {\n                \"id\": \"dfea62d4-2a86-11ec-8d3d-0242ac130003\",\n                \"data\": \"TBL_T_A_AGING_AR\"   \n            },\n            {\n                \"id\": \"dfea62d4-2a86-11ec-8d3d-0242ac130003\",\n                \"data\": \"TBL_T_A_ATB_ADDITION\"   \n            },\n            {\n                \"id\": \"dfea62d4-2a86-11ec-8d3d-0242ac130003\",\n                \"data\": \"TBL_T_A_BEP_PAMA\"   \n            },\n            {\n                \"id\": \"dfea62d4-2a86-11ec-8d3d-0242ac130003\",\n                \"data\": \"TBL_T_A_Carry_Over_Revenue\"   \n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Matrix",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"c15aa18e-2a87-11ec-8d3d-0242ac130003\",\n    \"alias\": \"master, production, validation\",\n    \"param_year\": true,\n    \"param_month\": true,\n    \"param_entity\": true,\n    \"param_budget_period\": true,\n    \"param_version\": true,\n    \"param_account_profile\": true,\n    \"param_ori_customer\": true,\n    \"param_customer_name\": true,\n    \"param_description\": true,\n    \"param_uuid\": true,\n    \"param_journal_number\": true,\n    \"param_report_name\": true,\n    \"valid_year\": true,\n    \"valid_month\": true,\n    \"valid_budget_period\": true,\n    \"valid_district\": true,\n    \"valid_entity\": true,\n    \"valid_type\": true,\n    \"valid_group\": true,\n    \"valid_type_of_product\": true,\n    \"valid_rebate_type\": true,\n    \"valid_currency\": true\n}\n\n ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/matrix",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matrix"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Matrix Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"c15aa18e-2a87-11ec-8d3d-0242ac130003\",\n    \"alias\": \"master, production, validation\",\n    \"param_year\": true,\n    \"param_month\": true,\n    \"param_entity\": true,\n    \"param_budget_period\": true,\n    \"param_version\": true,\n    \"param_account_profile\": true,\n    \"param_ori_customer\": true,\n    \"param_customer_name\": true,\n    \"param_description\": true,\n    \"param_uuid\": true,\n    \"param_journal_number\": true,\n    \"param_report_name\": true,\n    \"valid_year\": true,\n    \"valid_month\": true,\n    \"valid_budget_period\": true,\n    \"valid_district\": true,\n    \"valid_entity\": true,\n    \"valid_type\": true,\n    \"valid_group\": true,\n    \"valid_type_of_product\": true,\n    \"valid_rebate_type\": true,\n    \"valid_currency\": true\n}\n\n ",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/matrix",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"matrix"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully update table matrix\",\n    \"data\": {\n        \"table_name\": \"TBL_T_A_Carry_Over_Revenue\",\n        \"alias\": \"master, production, validation\",\n        \"param_year\": true,\n        \"param_month\": true,\n        \"param_entity\": true,\n        \"param_budget_period\": true,\n        \"param_version\": true,\n        \"param_account_profile\": true,\n        \"param_ori_customer\": true,\n        \"param_customer_name\": true,\n        \"param_description\": true,\n        \"param_uuid\": true,\n        \"param_journal_number\": true,\n        \"param_report_name\": true,\n        \"valid_year\": true,\n        \"valid_month\": true,\n        \"valid_budget_period\": true,\n        \"valid_district\": true,\n        \"valid_entity\": true,\n        \"valid_type\": true,\n        \"valid_group\": true,\n        \"valid_type_of_product\": true,\n        \"valid_rebate_type\": true,\n        \"valid_currency\": true\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Download",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/v1/matrix/download",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matrix",
+										"download"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Master Version",
+			"item": [
+				{
+					"name": "Get Version List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/version/{{table_id}}?page=1&keyword=COR&entity=PAMA&year=2021&period=01&version=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"version",
+								"{{table_id}}"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "keyword",
+									"value": "COR",
+									"description": "Bisa nama table atau alias"
+								},
+								{
+									"key": "entity",
+									"value": "PAMA",
+									"description": "filter ini bergantung matrix parameter table"
+								},
+								{
+									"key": "year",
+									"value": "2021",
+									"description": "filter ini bergantung matrix parameter table"
+								},
+								{
+									"key": "period",
+									"value": "01",
+									"description": "filter ini bergantung matrix parameter table"
+								},
+								{
+									"key": "version",
+									"value": "1",
+									"description": "filter ini bergantung matrix parameter table"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Version List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/version/{{table_id}}?page=1&keyword=COR&entity=PAMA&year=2021",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"version",
+										"{{table_id}}"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "keyword",
+											"value": "COR",
+											"description": "Bisa nama table atau alias"
+										},
+										{
+											"key": "entity",
+											"value": "PAMA",
+											"description": "filter ini bergantung matrix parameter table"
+										},
+										{
+											"key": "year",
+											"value": "2021",
+											"description": "filter ini bergantung matrix parameter table"
+										},
+										{
+											"key": "period",
+											"value": "01",
+											"description": "filter ini bergantung matrix parameter table",
+											"disabled": true
+										},
+										{
+											"key": "version",
+											"value": "1",
+											"description": "filter ini bergantung matrix parameter table",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully get version list\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 3,\n            \"page_number\": 1,\n            \"page_size\": 10,\n            \"total_pages\": 1\n        },\n        \"items\": [\n            {\n                \"id\": \"68c6bef2-2b0b-11ec-8d3d-0242ac130003\",\n                \"name\": \"TBL_M_COR_PLAN_Eksternal\",\n                \"entity\": \"PAMA\",\n                \"year\": 2021,\n                \"period\": \"01\",\n                \"version\": 1,\n                \"remarks\": \"\"\n            },\n            {\n                \"id\": \"68c6bef2-2b0b-11ec-8d3d-0242ac130003\",\n                \"name\": \"TBL_M_COR_PLAN_Eksternal\",\n                \"entity\": \"PAMA\",\n                \"year\": 2021,\n                \"period\": \"02\",\n                \"version\": 2,\n                \"remarks\": \"Remark ini diisi teks bebas\"\n            },\n            {\n                \"id\": \"68c6bef2-2b0b-11ec-8d3d-0242ac130003\",\n                \"name\": \"TBL_M_COR_PLAN_Eksternal\",\n                \"entity\": \"PAMA\",\n                \"year\": 2021,\n                \"period\": \"03\",\n                \"version\": 1,\n                \"remarks\": \"\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Available Version",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/version/available/{{data_version_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"version",
+								"available",
+								"{{data_version_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Available Version",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/version/available/{{data_version_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"version",
+										"available",
+										"{{data_version_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully get available versions\",\n    \"data\": [1,2,3]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Version",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"68c6bef2-2b0b-11ec-8d3d-0242ac130003\",\n    \"version\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/version",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"version"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Modification",
+			"item": [
+				{
+					"name": "Get Data Modification List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/datamodif?search=kurs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"datamodif"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "data",
+									"value": "TBL_T_A_DISCOUNT",
+									"description": "Jika ini diisi, parameter lain setelah ini akan disesuaikan",
+									"disabled": true
+								},
+								{
+									"key": "year",
+									"value": "2021",
+									"disabled": true
+								},
+								{
+									"key": "month",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "entity",
+									"value": "PAMA",
+									"disabled": true
+								},
+								{
+									"key": "version",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "kurs"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Data Modification List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/datamodif?data=TBL_T_A_DISCOUNT&year=2021&month=10&entity=PAMA&version=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"datamodif"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"value": "TBL_T_A_DISCOUNT",
+											"description": "Jika ini diisi, parameter lain setelah ini akan disesuaikan"
+										},
+										{
+											"key": "year",
+											"value": "2021"
+										},
+										{
+											"key": "month",
+											"value": "10"
+										},
+										{
+											"key": "entity",
+											"value": "PAMA"
+										},
+										{
+											"key": "version",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get data\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 28,\n            \"page_number\": 1,\n            \"page_size\": 10,\n            \"total_pages\": 3\n        },\n        \"links\": [\n            {\n                \"href\": \"http://api.pamamr-dev.dot.co.id/api/v1/datamodif?page_number=1&page_size=10\",\n                \"rel\": \"self\",\n                \"method\": \"GET\"\n            },\n            {\n                \"href\": \"http://api.pamamr-dev.dot.co.id/api/v1/datamodif?page_number=2&page_size=10\",\n                \"rel\": \"nextPage\",\n                \"method\": \"GET\"\n            }\n        ],\n        \"items\": [\n            {\n                \"id\": \"c2630b31-4b8b-41eb-b2a3-0b23fcc79929\",\n                \"file_name\": \"TBL_T_A_Coal_Index-2021-QLQ4-wLIpC.xlsx\",\n                \"table\": \"TBL_T_A_Coal_Index\",\n                \"year\": 2021,\n                \"period\": \"QLQ4\",\n                \"remark\": null,\n                \"process_remark\": null,\n                \"status\": 3\n            },\n            {\n                \"id\": \"24994dff-9474-48e8-a299-1059665a68f0\",\n                \"file_name\": \"TBL_T_A_ASPACK-2021-QLQ3-F56T6.xlsx\",\n                \"table\": \"TBL_T_A_ASPACK\",\n                \"year\": 2021,\n                \"period\": \"QLQ3\",\n                \"remark\": null,\n                \"process_remark\": \"Error System : 72955\",\n                \"status\": 2\n            },\n            {\n                \"id\": \"346d22b2-def3-46ae-9097-1da85eca0b5a\",\n                \"file_name\": \"TBL_T_A_FINAL_PROD-2021-QL4-BR7uh.xlsx\",\n                \"table\": \"TBL_T_A_FINAL_PROD\",\n                \"year\": 2021,\n                \"period\": \"QL4\",\n                \"remark\": null,\n                \"process_remark\": null,\n                \"status\": 3\n            },\n            {\n                \"id\": \"96859f7d-b008-460f-9388-26b6743d131c\",\n                \"file_name\": \"TBL_T_A_ASPACK-2021-QLQ3-B9Scn.xlsx\",\n                \"table\": \"TBL_T_A_ASPACK\",\n                \"year\": 2021,\n                \"period\": \"QLQ3\",\n                \"remark\": null,\n                \"process_remark\": \"Error System : 02795\",\n                \"status\": 2\n            },\n            {\n                \"id\": \"278c5a40-463f-4a9a-8a3d-271d6fd6dcac\",\n                \"file_name\": \"TBL_T_A_ASPACK-2021-QLQ3-iJSd7.xlsx\",\n                \"table\": \"TBL_T_A_ASPACK\",\n                \"year\": 2021,\n                \"period\": \"QLQ3\",\n                \"remark\": null,\n                \"process_remark\": \"Error System : 61848\",\n                \"status\": 2\n            },\n            {\n                \"id\": \"752ad106-73cd-4649-87fa-3631d20bd844\",\n                \"file_name\": \"TBL_T_A_FINAL_PROD-2021-QL4-0eSfN.xlsx\",\n                \"table\": \"TBL_T_A_FINAL_PROD\",\n                \"year\": 2021,\n                \"period\": \"QL4\",\n                \"remark\": null,\n                \"process_remark\": null,\n                \"status\": 1\n            },\n            {\n                \"id\": \"c08662ae-aa16-4cc9-b223-3c4675a3e662\",\n                \"file_name\": \"TBL_M_COR_ACTUAL-2021-QL3-ckNd5.xlsx\",\n                \"table\": \"TBL_M_COR_ACTUAL\",\n                \"year\": 2021,\n                \"period\": \"QL3\",\n                \"remark\": null,\n                \"process_remark\": \"Error System : 01284\",\n                \"status\": 2\n            },\n            {\n                \"id\": \"cd6bf131-f7a9-4860-afb1-3e71b09340ff\",\n                \"file_name\": \"TBL_T_A_PA-2021-QLQ3-JgKW9.xlsx\",\n                \"table\": \"TBL_T_A_PA\",\n                \"year\": 2021,\n                \"period\": \"QLQ3\",\n                \"remark\": null,\n                \"process_remark\": null,\n                \"status\": 3\n            },\n            {\n                \"id\": \"6be89ccb-fbc8-4da0-bb34-4d99abf5a716\",\n                \"file_name\": \"TBL_T_A_ASPACK-2021-QLQ34-E3XAx.xlsx\",\n                \"table\": \"TBL_T_A_ASPACK\",\n                \"year\": 2021,\n                \"period\": \"QLQ34\",\n                \"remark\": null,\n                \"process_remark\": null,\n                \"status\": 3\n            },\n            {\n                \"id\": \"b681888a-d1af-4e27-8942-5489070843c7\",\n                \"file_name\": \"TBL_T_A_UA-2021-QLQ4-Q7BLs.xlsx\",\n                \"table\": \"TBL_T_A_UA\",\n                \"year\": 2021,\n                \"period\": \"QLQ4\",\n                \"remark\": null,\n                \"process_remark\": null,\n                \"status\": 3\n            }\n        ]\n    },\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/Users/fatoni/Downloads/TBL_T_A_Defferred_exploration/2020/TBL_T_A_Defferred_exploration-2020-06.xlsx",
+										"/Users/fatoni/Downloads/TBL_T_A_Defferred_exploration/2020/TBL_T_A_Defferred_exploration-2020-07.xlsx",
+										"/Users/fatoni/Downloads/TBL_T_A_Defferred_exploration/2020/TBL_T_A_Defferred_exploration-2020-08.xlsx",
+										"/Users/fatoni/Downloads/TBL_T_A_Defferred_exploration/2020/TBL_T_A_Defferred_exploration-2020-09.xlsx",
+										"/Users/fatoni/Downloads/TBL_T_A_Defferred_exploration/2020/TBL_T_A_Defferred_exploration-2020-10.xlsx",
+										"/Users/fatoni/Downloads/TBL_T_A_Defferred_exploration/2020/TBL_T_A_Defferred_exploration-2020-11.xlsx",
+										"/Users/fatoni/Downloads/TBL_T_A_Defferred_exploration/2020/TBL_T_A_Defferred_exploration-2020-12.xlsx",
+										"/Users/fatoni/Downloads/TBL_T_A_Defferred_exploration/2020/TBL_T_A_Defferred_exploration-2020-12A.xlsx"
+									]
+								},
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/datamodif",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"datamodif"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Upload Data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/datamodif",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"datamodif"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully upload file(s)\",\n    \"data\": [\n        {\n            \"id\": \"f3a353ae-2b43-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_JUMLAH_HARI_KERJA\",\n            \"type\": \"Transaction\",\n            \"file_url\": \"/upload/2019/09/A_JUMLAH_HARI_KERJA-202109.xls\",\n            \"remark\": \"\",\n            \"version\": 1,\n            \"status\": \"waiting to process\" \n        },\n        {\n            \"id\": \"f3a353ae-2b43-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_AGING_AR\",\n            \"type\": \"Transaction\",\n            \"file_url\": \"/upload/2019/09/A_AGING_AR-202109.xls\",\n            \"remark\": \"\",\n            \"version\": 1,\n            \"status\": \"waiting to process\" \n        },\n        {\n            \"id\": \"f3a353ae-2b43-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_ASSET_ADDITION\",\n            \"type\": \"Transaction\",\n            \"file_url\": \"/upload/2019/09/A_ASSET_ADDITION-202109.xls\",\n            \"remark\": \"\",\n            \"version\": 1,\n            \"status\": \"waiting to process\" \n        },\n        {\n            \"id\": \"f3a353ae-2b43-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_ATB_ADDITION\",\n            \"type\": \"Transaction\",\n            \"file_url\": \"/upload/2019/09/A_ATB_ADDITION-202109.xls\",\n            \"remark\": \"\",\n            \"version\": 1,\n            \"status\": \"waiting to process\" \n        },\n        {\n            \"id\": \"f3a353ae-2b43-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_BEP_PAMA\",\n            \"type\": \"Transaction\",\n            \"file_url\": \"/upload/2019/09/A_BEP_PAMA-202109.xls\",\n            \"remark\": \"\",\n            \"version\": 1,\n            \"status\": \"waiting to process\" \n        }\n    ]\n}"
+						},
+						{
+							"name": "File Name Already Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/datamodif",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"datamodif"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"The data file already exist in server\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "Hanya boleh 1 file",
+									"type": "file",
+									"src": "/C:/Users/PC/Documents/TBL_T_P_kurs-2021-OLQ3.xlsx"
+								},
+								{
+									"key": "remark",
+									"value": "update",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/datamodif/{{data_modif_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"datamodif",
+								"{{data_modif_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Data Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "Hanya boleh 1 file",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "remark",
+											"value": "Update data sesuai arahan Pak Yo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/datamodif/{{data_modif_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"datamodif",
+										"{{data_modif_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully update data modif\",\n    \"data\": {\n        \"id\": \"f3a353ae-2b43-11ec-8d3d-0242ac130003\",\n        \"name\": \"TBL_T_A_BEP_PAMA\",\n        \"type\": \"Transaction\",\n        \"file_url\": \"/upload/2019/09/A_BEP_PAMA-202109.xls\",\n        \"remark\": \"Update data sesuai arahan Pak Yo\",\n        \"version\": 2,\n        \"previous_data_version_id\": {{data_modif_id}},\n        \"status\": \"waiting to process\" \n    }\n}"
+						},
+						{
+							"name": "File Name Not Matched",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "Hanya boleh 1 file",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "remark",
+											"value": "Update data sesuai arahan Pak Yo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/datamodif/{{data_modif_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"datamodif",
+										"{{data_modif_id}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"File name not matching with update target\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "remark",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/datamodif/{{data_modif_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"datamodif",
+								"{{data_modif_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Data Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "Hanya boleh 1 file",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "remark",
+											"value": "Update data sesuai arahan Pak Yo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/datamodif/{{data_modif_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"datamodif",
+										"{{data_modif_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully delete data modif\",\n    \"data\": {\n        \"id\": \"f3a353ae-2b43-11ec-8d3d-0242ac130003\",\n        \"name\": \"TBL_T_A_BEP_PAMA\",\n        \"type\": \"Transaction\",\n        \"file_url\": \"/upload/2019/09/A_BEP_PAMA-202109.xls\",\n        \"remark\": \"Salah data\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Data Modification Table Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/datamodif/tablesummary",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"datamodif",
+								"tablesummary"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Data Modification Table Summary Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/datamodif/tablesummary",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"datamodif",
+										"tablesummary"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get data\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 28,\n            \"page_number\": 1,\n            \"page_size\": 10,\n            \"total_pages\": 3\n        },\n        \"links\": [\n            {\n                \"href\": \"http://localhost:5000/api/v1/datamodif/tablesummary?page_number=1&page_size=10\",\n                \"rel\": \"self\",\n                \"method\": \"GET\"\n            },\n            {\n                \"href\": \"http://localhost:5000/api/v1/datamodif/tablesummary?page_number=2&page_size=10\",\n                \"rel\": \"nextPage\",\n                \"method\": \"GET\"\n            }\n        ],\n        \"items\": [\n            {\n                \"id\": \"c2630b31-4b8b-41eb-b2a3-0b23fcc79929\",\n                \"name\": \"TBL_T_A_Coal_Index\",\n                \"last_upload\": \"2022-01-07 16:23:16\",\n                \"data_uploaded\": 10\n            }\n        ]\n    },\n    \"errors\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth_login",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Data Table List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/tabledata",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tabledata"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Data Table List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/tabledata?keyword=actual",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tabledata"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "actual",
+									"description": "Table name atau alias"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully get table data\",\n    \"data\": [\n        {\n            \"id\": \"2f07f238-ee70-489e-9d78-7e7c5238c298\",\n            \"name\": \"TBL_T_A_DISCOUNT\",\n            \"alias\": \"discount, actual, production, cost\",\n            \"matrix_id\": \"e13bd3f6-2b40-11ec-8d3d-0242ac130003\"\n        },\n        {\n            \"id\": \"205feb26-2b41-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_COAL_SALES\",\n            \"alias\": \"discount, actual, production, cost\",\n            \"matrix_id\": \"814d0afe-2b41-11ec-8d3d-0242ac130003\"\n        },\n        {\n            \"id\": \"2be677bc-2b41-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_FINAL_PROD\",\n            \"alias\": \"discount, actual, production, cost\",\n            \"matrix_id\": \"8b316f7e-2b41-11ec-8d3d-0242ac130003\"\n        },\n        {\n            \"id\": \"35b1fbe0-2b41-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_FUEL_PRICE\",\n            \"alias\": \"discount, actual, production, cost\",\n            \"matrix_id\": \"966df290-2b41-11ec-8d3d-0242ac130003\"\n        },\n        {\n            \"id\": \"3e13e26c-2b41-11ec-8d3d-0242ac130003\",\n            \"name\": \"TBL_T_A_KURS\",\n            \"alias\": \"discount, actual, production, cost\",\n            \"matrix_id\": \"a0c9a874-2b41-11ec-8d3d-0242ac130003\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Activity Log List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/activitylogs?start_date&end_date&table_name&module_name&table_name&user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"activitylogs"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": ""
+						},
+						{
+							"key": "end_date",
+							"value": ""
+						},
+						{
+							"key": "table_name",
+							"value": ""
+						},
+						{
+							"key": "module_name",
+							"value": ""
+						},
+						{
+							"key": "table_name",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"value": "",
+							"description": "nrp atau nama user"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Activity Log List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/activitylogs?start_date&end_date&table_name&module_name&table_name&user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"activitylogs"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": null
+								},
+								{
+									"key": "end_date",
+									"value": null
+								},
+								{
+									"key": "table_name",
+									"value": null
+								},
+								{
+									"key": "module_name",
+									"value": null
+								},
+								{
+									"key": "table_name",
+									"value": null
+								},
+								{
+									"key": "user",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status_code\": 200,\n    \"success\": true,\n    \"message\": \"success get data\",\n    \"data\": {\n        \"paging\": {\n            \"total_items\": 28,\n            \"page_number\": 1,\n            \"page_size\": 10,\n            \"total_pages\": 3\n        },\n        \"links\": [\n            {\n                \"href\": \"http://localhost/api/v1/activitylog?page_number=1&page_size=10\",\n                \"rel\": \"self\",\n                \"method\": \"GET\"\n            },\n            {\n                \"href\": \"http://localhost/api/v1/activitylog?page_number=2&page_size=10\",\n                \"rel\": \"nextPage\",\n                \"method\": \"GET\"\n            }\n        ],\n        \"items\": [\n            {\n                \"id\": \"c2630b31-4b8b-41eb-b2a3-0b23fcc79929\",\n                \"user_nrp\": \"p611xxx\",\n                \"user_name\": \"John Doe\",\n                \"module\": \"Data Modification\",\n                \"action\": \"UPLOAD\",\n                \"table_name\": \"TBL_M_REPORT_DISTRICT_P\",\n                \"data_summary\": null,\n                \"remark\": null,\n                \"created_at\": \"2022-01-01 19:00\"\n            }\n        ]\n    },\n    \"errors\": null\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE4NzMxIiwiZ3JvdXBfaWQiOiIwIiwiZW1haWwiOiJ0ZWd1aC5wcmF0YW1hQHBhbWFwZXJzYWRhLmNvbSIsInJvbGUiOiJhZG1pbiBtciIsImRpc3RyaWN0X2NvZGUiOiJKSUVQIiwiZGlzdHJpY3RfYWNjZXNzIjoiW1wiQUxMXCJdIiwibmFtZSI6IlRFR1VIIElNQU0gUFJBVEFNQSIsInR5cGUiOiJhZG1pbiBtciIsImpvYl9ncm91cCI6IlRSRUEiLCJwb3NpdGlvbl9pZCI6IkhPNkZJMDE3IiwidXNlcl9pZCI6InA2MTE1NTA3IiwiZGl2aXNpb24iOiJGQVRCIiwibmJmIjoxNjQ5OTA5OTI0LCJleHAiOjE2NDk5OTYzMjQsImlhdCI6MTY0OTkwOTkyNH0.ZxKIM_tcXCEKmJ6Pi5jUwpzDuHG56EASE5WpVl3uZWA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api.pamamr-dev.dot.co.id"
+		},
+		{
+			"key": "{url",
+			"value": "ttps://pamamr-dev.dot.co.id",
+			"disabled": true
+		},
+		{
+			"key": "https://api.pamamr-dev.dot.co.id",
+			"value": "url",
+			"disabled": true
+		},
+		{
+			"key": "actual_period_id",
+			"value": "43fd2e03-0cef-46a1-aa1f-a03b5c64c6ab"
+		},
+		{
+			"key": "plan_period_id",
+			"value": "f6216527-b99e-4a51-89c6-af19c4513d1b"
+		}
+	]
+}
