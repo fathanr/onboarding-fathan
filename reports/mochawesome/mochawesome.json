@@ -1,0 +1,102 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-25T08:52:05.282Z",
+    "end": "2022-04-25T08:52:05.600Z",
+    "duration": 318,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4161c1d0-b07c-4b11-ae00-fc8644e90841",
+      "title": "",
+      "fullFile": "C:\\xampp\\htdocs\\onboarding-fathan\\test\\configuration\\period\\plan\\create-period-plan.js",
+      "file": "\\test\\configuration\\period\\plan\\create-period-plan.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aaf1c69c-1075-4725-ae33-35c5d616ecea",
+          "title": "Test Create Period Actual",
+          "fullFile": "C:\\xampp\\htdocs\\onboarding-fathan\\test\\configuration\\period\\plan\\create-period-plan.js",
+          "file": "\\test\\configuration\\period\\plan\\create-period-plan.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success Create Period Plan",
+              "fullTitle": "Test Create Period Actual Success Create Period Plan",
+              "timedOut": false,
+              "duration": 310,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "api.post(\"/api/v1/periodplan\")\n.set(\"Authorization\", \"Bearer \" + token)\n.set(\"Content-Type\", \"application/json\")\n.send({\n    \"period_master_id\": \"9E624F3A-139A-47FE-82C9-7AF217633981\",\n    \"year\": 2021,\n    \"status\": \"OPEN\"\n})\n\n.end(function ( error, response ) {\n    console.log(response.request)\n    expect(response, \"response should exist\").to.exist;\n    expect(response.status).to.equals(200);\n    // expect(response.body).to.have.property(\"id\")\n    // expect(response.body).to.have.property(\"year\")\n    // expect(response.body).to.have.property(\"period_master\")\n    // expect(response.body).to.have.property(\"status\")\n    // global.idPeriodPlan = response.body.data.items.id;\ndone();\n})",
+              "err": {},
+              "uuid": "407d0ece-d204-4c5e-a7a9-8d5bf3db36fb",
+              "parentUUID": "aaf1c69c-1075-4725-ae33-35c5d616ecea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "407d0ece-d204-4c5e-a7a9-8d5bf3db36fb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 310,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 180000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 180000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/mochawesome/"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "onboarding",
+  "name": "onboarding-fathan",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require mock-local-storage"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,9 @@
   },
   "devDependencies": {
     "mocha": "^9.2.2",
+    "mochawesome": "^7.1.3",
+    "mock-local-storage": "^1.1.22",
+    "should": "^13.2.3",
     "supertest": "^6.2.2"
   }
 }
