@@ -3,7 +3,7 @@ const expect = require("chai").expect;
 const chaiHttp = require("chai-http");
 require("dotenv").config();
 
-localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE4NzMxIiwiZ3JvdXBfaWQiOiIwIiwiZW1haWwiOiJ0ZWd1aC5wcmF0YW1hQHBhbWFwZXJzYWRhLmNvbSIsInJvbGUiOiJhZG1pbiBtciIsImRpc3RyaWN0X2NvZGUiOiJKSUVQIiwiZGlzdHJpY3RfYWNjZXNzIjoiW1wiQUxMXCJdIiwibmFtZSI6IlRFR1VIIElNQU0gUFJBVEFNQSIsInR5cGUiOiJhZG1pbiBtciIsImpvYl9ncm91cCI6IlRSRUEiLCJwb3NpdGlvbl9pZCI6IkhPNkZJMDE3IiwidXNlcl9pZCI6InA2MTE1NTA3IiwiZGl2aXNpb24iOiJGQVRCIiwibmJmIjoxNjUyMDY1MzMwLCJleHAiOjE2NTIxNTE3MzAsImlhdCI6MTY1MjA2NTMzMH0.Z-SHKfLMQziY_J2v9GEV7KRRQ-0JplJogdKyn2N1-U0")
+localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE4NzMxIiwiZ3JvdXBfaWQiOiIwIiwiZW1haWwiOiJ0ZWd1aC5wcmF0YW1hQHBhbWFwZXJzYWRhLmNvbSIsInJvbGUiOiJhZG1pbiBtciIsImRpc3RyaWN0X2NvZGUiOiJKSUVQIiwiZGlzdHJpY3RfYWNjZXNzIjoiW1wiQUxMXCJdIiwibmFtZSI6IlRFR1VIIElNQU0gUFJBVEFNQSIsInR5cGUiOiJhZG1pbiBtciIsImpvYl9ncm91cCI6IlRSRUEiLCJwb3NpdGlvbl9pZCI6IkhPNkZJMDE3IiwidXNlcl9pZCI6InA2MTE1NTA3IiwiZGl2aXNpb24iOiJGQVRCIiwibmJmIjoxNjU2MjQ2NzMyLCJleHAiOjE2NTYzMzMxMzIsImlhdCI6MTY1NjI0NjczMn0.mXwD3P-AB_ZHBBlszzijxuTa5kl8ThqRupL1DarYYrs")
 
 chai.use(chaiHttp);
 
@@ -20,8 +20,8 @@ describe("Automation Testing Period Plan", function () {
         .set("Content-Type", "application/json")
         .send({
 
-            "period_master_id": "9E624F3A-139A-47FE-82C9-7AF217633981",
-            "year": 2021,
+            "period_master_id": "8A38BEAB-A37D-4112-AC9C-C256C7CBD9D4",
+            "year": 2011,
             "status": "OPEN"
         })
 
@@ -109,12 +109,13 @@ describe("Automation Testing Period Plan", function () {
         .set("Content-Type", "application/json")
         .set("Authorization", "Bearer " + localStorage.getItem("token"))
         .send({
-            "period_master_id": "9e624f3a-139a-47fe-82c9-7af217633981",
-            "year": 2021,
+            "period_master_id": "8A38BEAB-A37D-4112-AC9C-C256C7CBD9D4",
+            "year": 2011,
             "status": "CLOSE"
         })
 
         .end(function ( error, response ) {
+            // console.log(response.body.errors)
             expect(response.status).to.equals(200);
             expect(response.body.data).to.have.property("id")
             expect(response.body.data).to.have.property("year")
@@ -124,18 +125,40 @@ describe("Automation Testing Period Plan", function () {
         })
     })
 
-    it("Failed Update Period Plan", function (done) {
+    it("Failed Update Period Plan with invalid data", function (done) {
         api.put("/api/v1/periodplan/" + localStorage.getItem("idPeriodPlan"))
         .set("Content-Type", "application/json")
         .set("Authorization", "bearer " + localStorage.getItem("token"))
         .send({
-            "period_master_id": "9e624f3a-139a-47fe-82c9-7af217633981",
-            "year": 2021,
+            "period_master_id": "8A38BEAB-A37D-4112-AC9C-C256C7CBD9D4",
+            "year": "ASfusW",
             "status": "CLOSE"
         })
 
         .end(function ( error, response ) {
             expect(response.status).to.equals(500);
+        done();
+        })
+    })
+
+    it("Failed Create Period Plan with same data", function (done) {
+        
+        
+        api.post("/api/v1/periodplan")
+        .set("Authorization", "Bearer " + localStorage.getItem("token"))
+        .set("Content-Type", "application/json")
+        .send({
+
+            "period_master_id": "8A38BEAB-A37D-4112-AC9C-C256C7CBD9D4",
+            "year": 2011,
+            "status": "CLOSE"
+        })
+
+
+        .end(function ( error, response ) {
+            // console.log(response.body.data.id)
+            expect(response, "response should exist").to.exist;
+            expect(response.status).to.equals(422);
         done();
         })
     })
